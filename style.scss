@@ -1,11 +1,90 @@
+$sandy-brown: hsla(25, 100%, 75%, 1);
+$light-coral: hsla(0, 70%, 68%, 1);
+$chocolate-cosmos: hsla(345, 100%, 20%, 1);
+$isabelline: hsla(30, 27%, 94%,1);
+$isabeline_shade: shade($isabelline, 10%);
+
+$brand_light: $sandy-brown;
+$brand_medium: $light-coral;
+$brand_dark: $chocolate-cosmos;
+$bg_light: $isabelline;
+
 @font-face {
     font-family: 'Outfit', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 }
+
+@mixin rounded_container ($r_margin, $r_padding ,$r_border_rad) {
+    margin: $r_margin;
+    padding-left: $r_padding;
+    padding-right: $r_padding;
+    padding-top: $r_padding*0.5 ;
+    padding-bottom: $r_padding*0.5;
+    border-radius: $r_border_rad;
+}
+
+@mixin gradient_dawn ($opacity) {
+    background: hsla(25, 100%, 75%, 1);
+
+    background: linear-gradient(45deg, hsla(25, 100%, 75%, 1) 0%, hsla(0, 70%, 68%, 1) 50%, hsla(345, 100%, 20%, 1) 100%);
+
+    background: -moz-linear-gradient(45deg, hsla(25, 100%, 75%, 1) 0%, hsla(0, 70%, 68%, 1) 50%, hsla(345, 100%, 20%, 1) 100%);
+
+    background: -webkit-linear-gradient(45deg, hsla(25, 100%, 75%, 1) 0%, hsla(0, 70%, 68%, 1) 50%, hsla(345, 100%, 20%, 1) 100%);
+
+    //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFB580", endColorstr="#E67373", GradientType=1 );
+
+    filter: opacity($opacity);
+}
+
+@mixin gradient_isabelline ($opacity_start, $opacity_end) {
+    
+    background: linear-gradient(45deg, hsla(32, 26%, 87%, $opacity_start) 0%, hsla(32, 26%, 87%, $opacity_end) 100%);
+
+    background: -moz-linear-gradient(45deg, hsla(32, 26%, 87%, $opacity_start) 0%, hsla(32, 26%, 87%, $opacity_end) 100%);
+    
+    background: -webkit-linear-gradient(45deg, hsla(32, 26%, 87%, $opacity_start) 0%, hsla(32, 26%, 87%, $opacity_end) 100%);
+}
+.gradient_text {
+    @include gradient_dawn(1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    mix-blend-mode: multiply;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: auto;
+    
+}
+
 body {
     font-family: 'Outfit', sans-serif;
+    background: $bg_light;
 }
 
 nav {
+    @include rounded_container(1rem, 0rem , 0rem);
+}
 
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    @include rounded_container(0.5rem, 1rem ,0.5rem )
+}
+
+nav a:hover {
+   @include gradient_isabelline(0.5,0.25);
 }

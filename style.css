@@ -2,6 +2,59 @@
   font-family: "Outfit", sans-serif;
   src: url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 }
+.gradient_text {
+  background: hsl(25, 100%, 75%);
+  background: linear-gradient(45deg, hsl(25, 100%, 75%) 0%, hsl(0, 70%, 68%) 50%, hsl(345, 100%, 20%) 100%);
+  background: -webkit-linear-gradient(45deg, hsl(25, 100%, 75%) 0%, hsl(0, 70%, 68%) 50%, hsl(345, 100%, 20%) 100%);
+  filter: opacity(1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  mix-blend-mode: multiply;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: auto;
+}
+
 body {
   font-family: "Outfit", sans-serif;
+  background: hsl(30, 27%, 94%);
+}
+
+nav {
+  margin: 1rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  border-radius: 0rem;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav a {
+  display: block;
+  margin: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+nav a:hover {
+  background: linear-gradient(45deg, hsla(32, 26%, 87%, 0.5) 0%, hsla(32, 26%, 87%, 0.25) 100%);
+  background: -webkit-linear-gradient(45deg, hsla(32, 26%, 87%, 0.5) 0%, hsla(32, 26%, 87%, 0.25) 100%);
 }/*# sourceMappingURL=style.css.map */
