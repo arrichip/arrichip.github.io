@@ -2,7 +2,8 @@ $sandy-brown: hsla(25, 100%, 75%, 1);
 $light-coral: hsla(0, 70%, 68%, 1);
 $chocolate-cosmos: hsla(345, 100%, 20%, 1);
 $isabelline: hsla(30, 27%, 94%,1);
-$isabeline_shade: shade($isabelline, 10%);
+$isabeline_shade: darken($color: $isabelline, $amount: 10%);
+$isabeline_lighter: lighten($color: $isabelline, $amount: 10%);
 
 $brand_light: $sandy-brown;
 $brand_medium: $light-coral;
@@ -52,7 +53,6 @@ $bg_light: $isabelline;
     -webkit-text-fill-color: transparent; 
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-    mix-blend-mode: multiply;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -87,4 +87,34 @@ nav a {
 
 nav a:hover {
    @include gradient_isabelline(0.5,0.25);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container.bento-grid {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.col.bento {
+    display: flex;
+    @include rounded_container(1rem, 1rem, 1rem);
+    background-color: $isabeline_lighter;
+    backdrop-filter: blur(10px);
+    
+}
+
+.col.long {
+    display: flex;
+    flex-direction: row;
 }
